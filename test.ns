@@ -1,0 +1,42 @@
+var a = 10;
+
+function parameter(x) {
+    print(x);                   //10
+    for (var i = 0; i<arguments.length; i++) {
+        print(arguments[i]);    // 10, 20, 30
+    }
+}
+parameter (10, 20, 30);
+
+function recursion(x) {
+    if (x > 5){
+        break;
+    }
+    print(x)
+    x += 1;
+    recursion(x);
+}
+recursion(0);
+
+
+function print_a(){
+    print(a);
+}
+
+function inner(){
+    function inner_print(){
+        print a;
+    }
+    var a = 0;
+    print_a();        //outer a, 10;
+    inner_print();    //inner a, 0;
+}
+
+function return_val(){
+    return 10;
+}
+
+var ret;
+ret = return_val();
+print(ret);         // 10
+
